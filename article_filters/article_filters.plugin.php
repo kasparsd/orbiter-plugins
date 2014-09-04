@@ -21,8 +21,8 @@ class article_filters extends orbiter_plugin {
 			if ( strstr( $article['uri'], $request_uri ) && $article['slug'] !== 'index' )
 				$children[] = $article;
 
-		foreach ( $object['articles'] as $article )
-			if ( strstr( $article['uri'], 'blog/' ) && ! empty( $article['slug'] ) )
+		foreach ( $articles as $article )
+			if ( strstr( $article['uri'], 'blog/' ) && ! empty( $article['slug'] ) && $article['slug'] !== 'index' )
 				$blog_posts[] = $article;
 
 		if ( ! empty( $children ) )
